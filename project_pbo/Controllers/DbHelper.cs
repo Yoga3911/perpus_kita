@@ -40,8 +40,10 @@ namespace project_pbo.Controllers
                 catch (NpgsqlException ex)
                 {
                     Console.WriteLine(ex.Message);
+                    cmd.Connection?.Close();
                     return false;
                 }
+                cmd.Connection?.Close();
                 return true;
             }
         }
@@ -72,8 +74,10 @@ namespace project_pbo.Controllers
                 catch (NpgsqlException ex)
                 {
                     Console.WriteLine(ex.Message);
+                    cmd.Connection?.Close();
                     return false;
                 }
+                cmd.Connection?.Close();
                 return true;
             }
         }

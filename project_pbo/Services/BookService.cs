@@ -41,7 +41,7 @@ namespace project_pbo.Services
             NpgsqlParameter[] param = new NpgsqlParameter[5];
             param[0] = new NpgsqlParameter("@title", title);
             param[1] = new NpgsqlParameter("@published_date", DateTime.Now);
-            param[2] = new NpgsqlParameter("rating", rating);
+            param[2] = new NpgsqlParameter("@rating", rating);
             param[3] = new NpgsqlParameter("@isbn", isbn);
             param[4] = new NpgsqlParameter("@publisher_id", publisher_id);
 
@@ -56,7 +56,7 @@ namespace project_pbo.Services
             param[0] = new NpgsqlParameter("@book_id", book_id);
             param[1] = new NpgsqlParameter("@title", title);
             param[2] = new NpgsqlParameter("@published_date", DateTime.Now);
-            param[3] = new NpgsqlParameter("rating", rating);
+            param[3] = new NpgsqlParameter("@rating", rating);
             param[4] = new NpgsqlParameter("@isbn", isbn);
             param[5] = new NpgsqlParameter("@publisher_id", publisher_id);
 
