@@ -8,12 +8,13 @@ namespace project_pbo.Repository
     {
         DbHelper dbHelper = new DbHelper();
         
-        public int GetCountData(string sql)
+        public int GetCountData(string tabel)
         {
             DataSet ds = new DataSet();
-
             NpgsqlParameter[] param0 = new NpgsqlParameter[0];
-            bool status = dbHelper.ExecuteRQuery(ref ds, sql, param0);
+            string query = $"SELECT * FROM {tabel}";
+
+            bool status = dbHelper.ExecuteRQuery(ref ds, query, param0);
             
             if (!status)
             {
@@ -25,33 +26,63 @@ namespace project_pbo.Repository
             return count;
         }
         
-        public bool GetAllData(DataSet ds, string sql, params NpgsqlParameter[] parameters)
+        public bool GetAllData(DataSet ds, string tabel, params NpgsqlParameter[] parameters)
         {
-            bool status = dbHelper.ExecuteRQuery(ref ds, sql, parameters);
+            string query = $"SELECT * FROM {tabel} ORDER BY book_id ASC";
+            bool status = dbHelper.ExecuteRQuery(ref ds, query, parameters);
 
             if (!status)
             {
-                Console.WriteLine("Operasi gagal dijalanjan");
+                Console.WriteLine("Operasi 'READ' gagal dijalanjan");
                 return false;
             }
 
             return true;
         }
 
-        public bool InsertData(string sql, params NpgsqlParameter[] parameters)
+        public bool InsertData(string query, NpgsqlParameter[] parameters)
         {
             DataTable dt = new DataTable();
-            bool status = dbHelper.ExecuteCUDQuery(ref dt, sql, parameters);
+
+            bool status = dbHelper.ExecuteCUDQuery(ref dt, query, parameters);
 
             if (!status)
             {
-                Console.WriteLine("Operasi gagal dijalankan");
+                Console.WriteLine("Operasi 'CREATE' gagal dijalankan");
                 return false;
             }
             
             return true;
         }
 
+        public bool UpdateData(string query, NpgsqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            
+            bool status = dbHelper.ExecuteCUDQuery(ref dt, query, parameters);
 
+            if (!status)
+            {
+                Console.WriteLine("Operasi 'UPDATE' gagal dijalankan");
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool DeleteData(string query, NpgsqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+
+            bool status = dbHelper.ExecuteCUDQuery(ref dt, query, parameters);
+
+            if (!status)
+            {
+                Console.WriteLine("Operasi 'DELETE' gagal dijalankan");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -31,9 +31,33 @@ namespace project_pbo.Controllers
 
         public IActionResult ManageBook()
         {
-            bookService.InsertBook();
+            
             
             return View();
+        }
+        
+        [HttpPost]
+        public IActionResult Insert()
+        {
+            bookService.InsertBook("Hidup dalam bayangan", "R", "2928109", 1);
+
+            return RedirectToAction("ManageBook");
+        }
+
+        [HttpPost]
+        public IActionResult Update()
+        {
+            bookService.UpdateBook(1, "Hidup itu menyakitkan", "R", "2928109", 1);
+
+            return RedirectToAction("ManageBook");
+        }
+
+        [HttpPost]
+        public IActionResult Delete()
+        {
+            bookService.DeleteBook(1);
+
+            return RedirectToAction("ManageBook");
         }
 
         public IActionResult Favorite()

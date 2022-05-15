@@ -74,4 +74,21 @@
 
 <div class="height-100 bg-light">
     <h4>Kelola Buku</h4>
+    @using (Html.BeginForm("Insert", "Book", FormMethod.Post))
+    {
+        <button type="submit"> Tambah </button>
+
+    }
+    
+    @using (Html.BeginForm("Update", "Book", FormMethod.Post))
+    {
+        <button type="submit"> Ubah </button>
+
+    }
+    
+    @using (Html.BeginForm("Delete", "Book", FormMethod.Post))
+    {
+        <button type="submit"> Hapus </button>
+
+    }
 </div>
