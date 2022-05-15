@@ -36,7 +36,6 @@ namespace project_pbo.Controllers
 
                     cmd.Connection?.Open();
                     new NpgsqlDataAdapter(cmd).Fill(dt);
-                    Console.WriteLine("Success");
                 }
                 catch (NpgsqlException ex)
                 {
@@ -69,7 +68,6 @@ namespace project_pbo.Controllers
                     }
                     cmd.Connection?.Open();
                     new NpgsqlDataAdapter(cmd).Fill(ds);
-                    Console.WriteLine("Success");
                 }
                 catch (NpgsqlException ex)
                 {
