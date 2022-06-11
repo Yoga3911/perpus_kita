@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Books Owned";
 }
 
@@ -74,4 +74,48 @@
 
 <div class="height-100 bg-light">
     <h4>Daftar Buku yang dimiliki</h4>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Judul</th>
+      <th scope="col">Tanggal Peminjaman</th>
+      <th scope="col">Tanggal Pengembalian</th>
+      <th scope="col">Pengembalian</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <th>10000</th>
+      <td>The Da Vinci Code</td>
+      <td>6 Juni 2022</td>
+      <td>10 Juni 2022</td>
+      <td><button type="button" class="btn btn-primary">Dikembalikan</button></td>
+      <td>Late</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <th>10000</th>
+      <td>Breaking The Cycle</td>
+      <td>10 Juni 2022</td>
+      <td>17 Juni 2022</td>
+      <td><button type="button" class="btn btn-primary">Dikembalikan</button></td>
+      <td>Dipinjam</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <th>10000</th>
+      <td>Antologi Kopi</td>
+      <td>10 Juni 2022</td>
+      <td>17 Juni 2022</td>
+      <td><button type="button" class="btn btn-primary">Dikembalikan</button></td>
+      <td>Dipinjam</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
 </div>
