@@ -39,6 +39,13 @@ namespace project_pbo.Controllers
             return View();
         }
 
+        public IActionResult EditBook()
+        {
+            bookService.getBookById();
+
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Insert(BookModel bookModel)
         {

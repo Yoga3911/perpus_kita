@@ -35,6 +35,22 @@ namespace project_pbo.Services
             return books;
         }
 
+        public BookModel getBookById()
+        {
+            DataSet ds = new DataSet();
+            NpgsqlParameter[] param = new NpgsqlParameter[0];
+
+            bookRepository.GetOneData(ds, "books", param);
+
+            
+
+            BookModel book = new BookModel();
+
+            Console.WriteLine(ds);
+
+            return book;
+        }
+
         public void InsertBook(string title, string description, string rating, string isbn, int publisher_id, DateTime publisher_date)
         {
             string query = "INSERT INTO books (title, description, published_date, rating, isbn, publisher_id) VALUES (@title, @description, @published_date, @rating, @isbn, @publisher_id)";

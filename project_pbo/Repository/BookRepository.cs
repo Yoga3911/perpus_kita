@@ -25,7 +25,21 @@ namespace project_pbo.Repository
             int count = ds.Tables[0].Rows.Count + 1;
             return count;
         }
-        
+
+        public bool GetOneData(DataSet ds, string tabel, params NpgsqlParameter[] parameters)
+        {
+            string query = $"SELECT * FROM {tabel} WHERE id = 4";
+            bool status = dbHelper.ExecuteRQuery(ref ds, query, parameters);
+
+            if (!status)
+            {
+                Console.WriteLine("Operasi 'READ' gagal dijalanjan");
+                return false;
+            }
+
+            return true;
+        }
+
         public bool GetAllData(DataSet ds, string tabel, params NpgsqlParameter[] parameters)
         {
             string query = $"SELECT * FROM {tabel} ORDER BY book_id ASC";

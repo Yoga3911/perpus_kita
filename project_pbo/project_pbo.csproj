@@ -18,6 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Book\EditBook.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Book\EditBook.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="2.3.0" />
     <PackageReference Include="Npgsql" Version="6.0.4" />
   </ItemGroup>
