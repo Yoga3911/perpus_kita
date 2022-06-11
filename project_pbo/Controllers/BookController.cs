@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Npgsql;
 using project_pbo.Models;
-using System.Data;
 using System.Diagnostics;
 using project_pbo.Services;
 
@@ -31,6 +29,8 @@ namespace project_pbo.Controllers
 
         public IActionResult ManageBook()
         {
+            ViewData["data"] = bookService.GetAllBook();
+
             return View();
         }
         
@@ -40,9 +40,9 @@ namespace project_pbo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Insert()
+        public IActionResult Insert(BookModel bookModel)
         {
-            bookService.InsertBook("Hidup dalam bayangan", "R", "2928109", 1);
+            bookService.InsertBook(bookModel.Title!, bookModel.Description!, bookModel.Rating!, bookModel.Isbn!, bookModel.PublisherId, bookModel.PublishedDate);
 
             return RedirectToAction("ManageBook");
         }
@@ -50,7 +50,7 @@ namespace project_pbo.Controllers
         [HttpPost]
         public IActionResult Update()
         {
-            bookService.UpdateBook(1, "Hidup itu menyakitkan", "R", "2928109", 1);
+            bookService.UpdateBook(1, "", "Hidup itu menyakitkan", "R", "2928109", 1);
 
             return RedirectToAction("ManageBook");
         }

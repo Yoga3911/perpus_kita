@@ -24,41 +24,44 @@ namespace project_pbo.Services
                 BookModel book = new BookModel();
                 book.BookId = dr.Field<Int32>(data.Columns[0]);
                 book.Title = dr.Field<string>(data.Columns[1]);
-                book.PublishedDate = dr.Field<DateTime>(data.Columns[2]);
-                book.Rating = dr.Field<string>(data.Columns[3]);
-                book.Isbn = dr.Field<string>(data.Columns[4]);
-                book.PublisherId = dr.Field<Int16>(data.Columns[5]);
+                book.Description = dr.Field<string>(data.Columns[2]);
+                book.PublishedDate = dr.Field<DateTime>(data.Columns[3]);
+                book.Rating = dr.Field<string>(data.Columns[4]);
+                book.Isbn = dr.Field<string>(data.Columns[5]);
+                book.PublisherId = dr.Field<Int16>(data.Columns[6]);
                 books.Add(book);
             }
 
             return books;
         }
 
-        public void InsertBook(string title, string rating, string isbn, int publisher_id)
+        public void InsertBook(string title, string description, string rating, string isbn, int publisher_id, DateTime publisher_date)
         {
-            string query = "INSERT INTO books (title, published_date, rating, isbn, publisher_id) VALUES (@title, @published_date, @rating, @isbn, @publisher_id)";
+            string query = "INSERT INTO books (title, description, published_date, rating, isbn, publisher_id) VALUES (@title, @description, @published_date, @rating, @isbn, @publisher_id)";
 
-            NpgsqlParameter[] param = new NpgsqlParameter[5];
+            NpgsqlParameter[] param = new NpgsqlParameter[6];
             param[0] = new NpgsqlParameter("@title", title);
-            param[1] = new NpgsqlParameter("@published_date", DateTime.Now);
-            param[2] = new NpgsqlParameter("@rating", rating);
-            param[3] = new NpgsqlParameter("@isbn", isbn);
-            param[4] = new NpgsqlParameter("@publisher_id", publisher_id);
+            param[1] = new NpgsqlParameter("@description", description);
+            param[2] = new NpgsqlParameter("@published_date", publisher_date);
+            param[3] = new NpgsqlParameter("@rating", rating);
+            param[4] = new NpgsqlParameter("@isbn", isbn);
+            param[5] = new NpgsqlParameter("@publisher_id", publisher_id);
 
             bookRepository.InsertData(query, param);
         }
 
-        public void UpdateBook(int book_id, string title, string rating, string isbn, int publisher_id)
+        public void UpdateBook(int book_id, string title, string description, string rating, string isbn, int publisher_id)
         {
             string query = "UPDATE books SET title = @title, published_date = @published_date, rating = @rating, isbn = @isbn, publisher_id = @publisher_id WHERE book_id = @book_id";
 
             NpgsqlParameter[] param = new NpgsqlParameter[6];
             param[0] = new NpgsqlParameter("@book_id", book_id);
             param[1] = new NpgsqlParameter("@title", title);
-            param[2] = new NpgsqlParameter("@published_date", DateTime.Now);
-            param[3] = new NpgsqlParameter("@rating", rating);
-            param[4] = new NpgsqlParameter("@isbn", isbn);
-            param[5] = new NpgsqlParameter("@publisher_id", publisher_id);
+            param[2] = new NpgsqlParameter("@title", description);
+            param[3] = new NpgsqlParameter("@published_date", DateTime.Now);
+            param[4] = new NpgsqlParameter("@rating", rating);
+            param[5] = new NpgsqlParameter("@isbn", isbn);
+            param[6] = new NpgsqlParameter("@publisher_id", publisher_id);
 
             bookRepository.UpdateData(query, param);
         }

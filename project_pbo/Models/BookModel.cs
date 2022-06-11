@@ -7,6 +7,7 @@
         public string? Title { get; set; }
         public string? Rating { get; set; }
         public string? Isbn { get; set; }
+        public string? Description { get; set; }
         public Int16 PublisherId { get; set; }
         public DateTime PublishedDate { get; set; }
     }
