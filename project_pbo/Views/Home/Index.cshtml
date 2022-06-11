@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Dashboard";
 }
 
@@ -74,4 +74,60 @@
 
 <div class="height-100 bg-light">
     <h4>Dashboard</h4>
+    <center>
+        <div class="row">
+        <img src="~/assets/banner.svg">
+         <h1 class="text-start">Tentang PerpusKita</h1>
+            @{
+              //CARD
+              <div class="col-4 my-3">
+                <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <img class="card-img-top" src='~/assets/card1.svg' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+             </div>
+             <div class="col-4 my-3">
+                <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <img class="card-img-top" src='~/assets/card2.svg' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+             </div>
+             <div class="col-4 my-3">
+                <div class="card" style="width: 18rem; margin-bottom: 20px;">
+                    <img class="card-img-top" src='~/assets/card3.svg' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+             </div>
+            }
+            @*Manfaat*@
+            <img src="~/assets/manfaat.svg">
+            
+            @*Info lanjut*@
+            <div class="info" style='margin-bottom:70px;'>
+                <center>
+                <div style='width:fit-content; height:100px; background-color:white;'>
+                <h1>PerpusKita, Layanan Perpustakaan Digital</h1>
+                <div>Nikmati kemudahan peminjaman buku</div>
+                <div style='margin-bottom:10px'>terlengkap dalam satu aplikasi. Coba demo-nya sekarang!</div>
+                <a href="#" class="btn btn-primary">Informasi Lebih Lanjut</a>
+            </div>
+            </center>
+            </div>
+            
+            @*Kontak*@
+            <img src="~/assets/kontak.svg">
+    </div>
+    </center>
 </div>
