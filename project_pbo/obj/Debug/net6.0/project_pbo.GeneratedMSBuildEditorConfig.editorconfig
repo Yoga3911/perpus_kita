@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Kuliah\SMT 4\PBO\project_pbo\project_pbo
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/AddBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGRCb29rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/BookOwned.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rT3duZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

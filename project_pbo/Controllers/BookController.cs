@@ -31,11 +31,14 @@ namespace project_pbo.Controllers
 
         public IActionResult ManageBook()
         {
-            
-            
             return View();
         }
         
+        public IActionResult AddBook()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Insert()
         {
