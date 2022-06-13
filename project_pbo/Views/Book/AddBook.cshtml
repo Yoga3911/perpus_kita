@@ -110,13 +110,15 @@
                 <button type="button" class="btn btn-secondary" id="back">Kembali</button>
                 <button type="submit" class="btn btn-primary mx-2">Tambah</button>
             </div>
+                <br>
         </form>
     </div>
 
 </div>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-    document.getElementById("back").onclick = function() {
+    $("#back").click(function() {
         window.location.href = "ManageBook"
-    }
+    })
 </script>

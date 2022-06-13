@@ -26,14 +26,14 @@ namespace project_pbo.Repository
             return count;
         }
 
-        public bool GetOneData(DataSet ds, string tabel, params NpgsqlParameter[] parameters)
+        public bool GetOneData(DataSet ds, string tabel, int bookId, params NpgsqlParameter[] parameters)
         {
-            string query = $"SELECT * FROM {tabel} WHERE id = 4";
+            string query = $"SELECT * FROM {tabel} WHERE book_id = {bookId}";
             bool status = dbHelper.ExecuteRQuery(ref ds, query, parameters);
 
             if (!status)
             {
-                Console.WriteLine("Operasi 'READ' gagal dijalanjan");
+                Console.WriteLine("Operasi 'READ' gagal dijalankan");
                 return false;
             }
 

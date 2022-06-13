@@ -75,30 +75,36 @@
 <div class="height-100 bg-light">
     <h4 style="font-weight:800">Kelola Buku > Ubah Buku</h4>
     <div class="mx-2">
+        @{
+            var data = (BookModel)ViewData["data"]!;
+            var date = data.PublishedDate.ToString("yyyy-MM-dd");
+            Console.WriteLine(date);
+        }
         @model project_pbo.Models.BookModel
-        <form asp-controller="Book" asp-action="Insert">
+        <form asp-controller="Book" asp-action="ApplyBookChanges">
+            <input asp-for="BookId" value="@data.BookId" type="text" class="form-control" id="title" hidden>
             <div class="mb-3">
                 <label asp-for="Title" class="form-label">Judul Buku</label>
-                <input asp-for="Title" type="text" class="form-control" id="title">
+                <input asp-for="Title" value="@data.Title" type="text" class="form-control" id="title">
             </div><div class="mb-3">
                 <label asp-for="PublisherId" class="form-label">Id Publisher</label>
-                <input asp-for="PublisherId" type="text" class="form-control" id="publisherId">
+                <input asp-for="PublisherId" value="@data.PublisherId" type="text" class="form-control" id="publisherId">
             </div>
             <div class="mb-3">
                 <label asp-for="Description" class="form-label">Deskripsi</label>
-                <textarea asp-for="Description" type="text" class="form-control" id="description"></textarea>
+                <textarea asp-for="Description = @data.Description" name="description" class="form-control" id="description"></textarea>
             </div>
             <div class="mb-3">
                 <label asp-for="Isbn" class="form-label">ISBN</label>
-                <input asp-for="Isbn" type="text" class="form-control" id="isbn">
+                <input asp-for="Isbn" value="@data.Isbn" type="text" class="form-control" id="isbn">
             </div>
             <div class="mb-3">
                 <label asp-for="PublishedDate" class="form-label">Tanggal Publikasi</label>
-                <input asp-for="PublishedDate" type="date" class="form-control" style="width: fit-content;">
+                <input asp-for="PublishedDate" value="@date" type="date" class="form-control" style="width: fit-content;">
             </div>
             <div class="mb-3">
                 <label asp-for="Rating" class="form-label" for="rating">Rating</label>
-                <select asp-for="Rating" class="form-control" name="rating" id="rating" style="width: fit-content;">
+                <select asp-for="Rating = @data.Rating" class="form-control" name="rating" id="rating" style="width: fit-content;">
                     <option value="G">G</option>
                     <option value="PG">PG</option>
                     <option value="PG-13">PG-13</option>
@@ -108,15 +114,17 @@
             </div>
             <div class="d-flex">
                 <button type="button" class="btn btn-secondary" id="back">Kembali</button>
-                <button type="submit" class="btn btn-primary mx-2">Tambah</button>
+                <button type="submit" class="btn btn-primary mx-2">Ubah</button>
             </div>
+            <br>
         </form>
     </div>
 
 </div>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-    document.getElementById("back").onclick = function() {
+    $("#back").click(function() {
         window.location.href = "ManageBook"
-    }
+    })
 </script>

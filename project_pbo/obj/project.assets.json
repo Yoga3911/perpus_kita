@@ -4638,11 +4638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kuliah\\SMT 4\\PBO\\project_pbo\\project_pbo\\project_pbo.csproj",
+      "projectUniqueName": "D:\\Code\\C#\\perpus_kita\\project_pbo\\project_pbo.csproj",
       "projectName": "project_pbo",
-      "projectPath": "D:\\Kuliah\\SMT 4\\PBO\\project_pbo\\project_pbo\\project_pbo.csproj",
+      "projectPath": "D:\\Code\\C#\\perpus_kita\\project_pbo\\project_pbo.csproj",
       "packagesPath": "C:\\Users\\Yoga\\.nuget\\packages\\",
-      "outputPath": "D:\\Kuliah\\SMT 4\\PBO\\project_pbo\\project_pbo\\obj\\",
+      "outputPath": "D:\\Code\\C#\\perpus_kita\\project_pbo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yoga\\AppData\\Roaming\\NuGet\\NuGet.Config",

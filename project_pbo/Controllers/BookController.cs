@@ -39,10 +39,10 @@ namespace project_pbo.Controllers
             return View();
         }
 
-        public IActionResult EditBook()
+        [HttpPost]
+        public IActionResult EditBook(BookModel bookModel)
         {
-            bookService.getBookById();
-
+            ViewData["data"] = bookService.getBookById(bookModel.BookId!);
             return View();
         }
 
@@ -55,9 +55,17 @@ namespace project_pbo.Controllers
         }
 
         [HttpPost]
+        public IActionResult ApplyBookChanges(BookModel bookModel)
+        {
+            bookService.UpdateBook(bookModel.BookId, bookModel.Title!, bookModel.Description!, bookModel.Rating!, bookModel.Isbn!, bookModel.PublisherId, bookModel.PublishedDate);
+
+            return RedirectToAction("ManageBook");
+        }
+
+        [HttpPost]
         public IActionResult Update()
         {
-            bookService.UpdateBook(1, "", "Hidup itu menyakitkan", "R", "2928109", 1);
+            //bookService.UpdateBook(1, "", "Hidup itu menyakitkan", "R", "2928109", 1);
 
             return RedirectToAction("ManageBook");
         }
