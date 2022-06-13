@@ -2,6 +2,7 @@
 using project_pbo.Models;
 using System.Diagnostics;
 using project_pbo.Services;
+using System.Web;
 
 namespace project_pbo.Controllers
 {
@@ -39,10 +40,10 @@ namespace project_pbo.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult EditBook(BookModel bookModel)
+        [HttpGet]
+        public IActionResult EditBook(int bookId)
         {
-            ViewData["data"] = bookService.getBookById(bookModel.BookId!);
+            ViewData["data"] = bookService.getBookById(bookId);
             return View();
         }
 
@@ -62,18 +63,12 @@ namespace project_pbo.Controllers
             return RedirectToAction("ManageBook");
         }
 
-        [HttpPost]
-        public IActionResult Update()
+        [HttpGet]
+        public IActionResult Delete(int bookId)
         {
-            //bookService.UpdateBook(1, "", "Hidup itu menyakitkan", "R", "2928109", 1);
+            Console.WriteLine(bookId);
+            bookService.DeleteBook(bookId);
 
-            return RedirectToAction("ManageBook");
-        }
-
-        [HttpPost]
-        public IActionResult Delete()
-        {
-            bookService.DeleteBook(1);
 
             return RedirectToAction("ManageBook");
         }
