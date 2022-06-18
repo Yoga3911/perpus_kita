@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+
+<div class="container body-pd-r">
+    @model project_pbo.Models.UserModel
+    <form asp-controller="Auth" asp-action="Insert">
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+            <label for="passowrd1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1">
+        </div>
+        <div class="mb-3">
+            <label for="passowrd2" class="form-label">Retype Password</label>
+            <input type="password" class="form-control" id="password2">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone">
+        </div>
+        <button type="submit" class="btn btn-success" id="home">Register</button>
+    </form>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#home").click(function() {
+        window.location.href = "/Home"
+    })
+</script>

@@ -58,3 +58,12 @@ D:\Code\C#\perpus_kita\project_pbo\obj\Debug\net6.0\refint\project_pbo.dll
 D:\Code\C#\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.pdb
 D:\Code\C#\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.genruntimeconfig.cache
 D:\Code\C#\perpus_kita\project_pbo\obj\Debug\net6.0\ref\project_pbo.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\EvtSource.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\FirebaseNet.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Auth.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Core.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Drive.v3.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\client_secret_172005209635-uarjtftlre47b423a4a50091trc8eqe7.apps.googleusercontent.com.json

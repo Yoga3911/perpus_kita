@@ -127,6 +127,10 @@ a {
     padding-left: calc(var(--nav-width) + 1rem)
 }
 
+.body-pd-r {
+    padding-right: 250px
+}
+
 .active {
     color: var(--white-color)
 }

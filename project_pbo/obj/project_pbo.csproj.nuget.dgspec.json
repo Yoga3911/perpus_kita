@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[2.3.0, )"
             },
+            "Firebase.Net": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Google.Apis.Drive.v3": {
+              "target": "Package",
+              "version": "[1.57.0.2684, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[6.0.4, )"
