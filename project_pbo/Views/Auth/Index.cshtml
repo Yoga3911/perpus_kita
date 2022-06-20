@@ -3,31 +3,33 @@
 }
 
 
-<div class="container body-pd-r">
-    @model project_pbo.Models.UserModel
-    <form asp-controller="Auth" asp-action="Login">
-        <div class="mb-3">
-            <label asp-for="Email" class="form-label">Email address</label>
-            <input asp-for="Email" type="email" class="form-control" id="Email">
-        </div>
-        <div class="mb-3">
-            <label asp-for="Password" class="form-label">Password</label>
-            <input asp-for="Password" type="password" class="form-control" id="Password">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="button" class="btn btn-primary" id="login">Login</button>
-        <button type="button" class="btn btn-success" id="register">Register</button>
-    </form>
-    <center><img src="~/assets/loading2.gif" width=350 id="loading"></center>
-    <br>
-    <center>
-        <div class="alert alert-danger" role="alert" id="errorAlert">
-            Email atau Password salah!
-        </div>
-    </center>
+<div class="" style="overflow-x: clip">
+    <img src="~/assets/login2.svg" width="100%" style="position: absolute; left: 0 ;top:-65px; z-index: 0">
+    <div style="position: relative; top: 150px; left: 600px; z-index: 10">
+        @model project_pbo.Models.UserModel
+        <form asp-controller="Auth" asp-action="Login">
+            <div class="col-4 mb-3">
+                <label asp-for="Email" class="form-label" style="color: white">Email address</label>
+                <input asp-for="Email" type="email" class="form-control" id="Email">
+            </div>
+            <div class="mb-3 col-4">
+                <label asp-for="Password" class="form-label" style="color: white">Password</label>
+                <input asp-for="Password" type="password" class="form-control" id="Password">
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary" id="login">Login</button>
+                <button type="button" class="btn btn-success" id="register">Register</button>
+            </div>
+
+        </form>
+        <center><img src="~/assets/loading2.gif" width=350 id="loading"></center>
+        <br>
+        <center>
+            <div class="alert alert-danger" role="alert" id="errorAlert">
+                Email atau Password salah!
+            </div>
+        </center>
+    </div>
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
