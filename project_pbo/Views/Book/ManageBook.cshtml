@@ -71,7 +71,7 @@
         </a>
     </nav>
 </div>
-@*TABEL*@
+
 <div class="">
     <br>
     <h4 style="font-weight:800">Kelola Buku</h4>
@@ -140,28 +140,4 @@
     $("#addBook").click(function() {
         window.location.href = "AddBook"
     })
-
-    var bookId;
-    $('.deleteBook').click(function () {
-    var conf = confirm('Apakah anda yakin ingin menghapus buku ini?');
-    if (conf) {
-    bookId = $(this).attr('id');
-    console.log(bookId);
-    alert(pryEmpId);
-    if (pryEmpId!='') {
-        $.ajax({
-            url: 'DeleteBook',
-            data: { 'id': bookId },
-            type: 'POST',
-            success: function (data) {
-                if (data) {
-                    alert('Buku berhasil dihapus');
-                    }
-                    }, error: function (err) {
-                        alert(err.statusText);
-                        }
-                    });
-                    }
-                }
-            });
 </script>

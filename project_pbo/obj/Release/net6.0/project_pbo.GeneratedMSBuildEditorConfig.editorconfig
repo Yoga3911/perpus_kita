@@ -8,57 +8,69 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = project_pbo
 build_property.RootNamespace = project_pbo
-build_property.ProjectDir = D:\Kuliah\SMT 4\PBO\project_pbo\project_pbo\
+build_property.ProjectDir = D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Kuliah\SMT 4\PBO\project_pbo\project_pbo
+build_property.MSBuildProjectDirectory = D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/AddBook.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Auth/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/AddBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGRCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/BookOwned.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/BookOwned.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rT3duZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/Favorite.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/EditBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0Qm9vay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/Favorite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xGYXZvcml0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/Index.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Book/ManageBook.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Book/ManageBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xNYW5hZ2VCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Home/Index.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Profile/Index.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Profile/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Shared/Error.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/_ViewImports.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/_ViewStart.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Kuliah/SMT 4/PBO/project_pbo/project_pbo/Views/Shared/_Layout.cshtml]
+[D:/PERKULIAHAN/Semester 4/perpus_kita/project_pbo/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-z100k62789

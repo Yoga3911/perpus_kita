@@ -59,6 +59,7 @@ namespace project_pbo.Controllers
             using (NpgsqlCommand cmd = new NpgsqlCommand(sql, connStr))
             {
                 cmd.CommandType = CommandType.Text;
+                Console.WriteLine(sql);
                 try
                 {
                     if (parameters.Length > 0)

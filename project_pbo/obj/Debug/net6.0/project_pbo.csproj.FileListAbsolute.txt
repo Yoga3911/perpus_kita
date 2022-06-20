@@ -67,3 +67,42 @@ D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Core.dll
 D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Drive.v3.dll
 D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Code\C#\perpus_kita\project_pbo\bin\Debug\net6.0\client_secret_172005209635-uarjtftlre47b423a4a50091trc8eqe7.apps.googleusercontent.com.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\appsettings.Development.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\appsettings.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\client_secret_172005209635-uarjtftlre47b423a4a50091trc8eqe7.apps.googleusercontent.com.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.staticwebassets.runtime.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.exe
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.deps.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.runtimeconfig.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\project_pbo.pdb
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\EvtSource.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\DotNetEnv.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\FirebaseNet.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Auth.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Core.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Google.Apis.Drive.v3.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Npgsql.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\bin\Debug\net6.0\Sprache.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.csproj.AssemblyReference.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.GeneratedMSBuildEditorConfig.editorconfig
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.AssemblyInfoInputs.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.AssemblyInfo.cs
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.csproj.CoreCompileInputs.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.MvcApplicationPartsAssemblyInfo.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.RazorAssemblyInfo.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.RazorAssemblyInfo.cs
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\staticwebassets.build.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\staticwebassets.development.json
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\scopedcss\bundle\project_pbo.styles.css
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\scopedcss\projectbundle\project_pbo.bundle.scp.css
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.csproj.CopyComplete
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\refint\project_pbo.dll
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.pdb
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.genruntimeconfig.cache
+D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\ref\project_pbo.dll

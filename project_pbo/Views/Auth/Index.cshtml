@@ -4,30 +4,67 @@
 
 
 <div class="container body-pd-r">
-    <form>
+    @model project_pbo.Models.UserModel
+    <form asp-controller="Auth" asp-action="Login">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label asp-for="Email" class="form-label">Email address</label>
+            <input asp-for="Email" type="email" class="form-control" id="Email">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" type="password" class="form-control" id="Password">
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="button" class="btn btn-primary" id="home">Login</button>
+        <button type="button" class="btn btn-primary" id="login">Login</button>
         <button type="button" class="btn btn-success" id="register">Register</button>
     </form>
+    <center><img src="~/assets/loading2.gif" width=350 id="loading"></center>
+    <br>
+    <center>
+        <div class="alert alert-danger" role="alert" id="errorAlert">
+            Email atau Password salah!
+        </div>
+    </center>
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
-    $("#home").click(function() {
-        window.location.href = "/Home"
-    })
+      $("#loading").hide();
+      $("#errorAlert").hide();
+      $("#home").click(function() {
+          window.location.href = "/Home"
+      })
 
-    $("#register").click(function() {
-        window.location.href = "/Auth/SignUp"
-    })
+      $("#register").click(function() {
+          window.location.href = "/Auth/SignUp"
+      })
+
+      $("#login").click(function () {
+      $("#errorAlert").hide();
+      $("#loading").show();
+      const email = $("#Email").val();
+      const password = $("#Password").val();
+      $.ajax({
+        type: "POST",
+        url: "/Auth/Login",
+        data: { email: email, password: password },
+        success: function (resdata) {
+          console.log("Login Success");
+          $("#loading").hide();
+          if (resdata) {
+              window.location.href = "/Home";
+          } else {
+              $("#errorAlert").show();
+          }
+        },
+        error: function (result, status, err) {
+          $("#loading").hide();
+          console.log("error", result.responseText);
+          console.log("error", status.responseText);
+          console.log("error", err.Message);
+        }
+      });
+    });
 </script>
