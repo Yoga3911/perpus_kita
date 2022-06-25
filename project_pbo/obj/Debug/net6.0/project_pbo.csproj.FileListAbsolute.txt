@@ -106,3 +106,14 @@ D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\refint\projec
 D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.pdb
 D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\project_pbo.genruntimeconfig.cache
 D:\PERKULIAHAN\Semester 4\perpus_kita\project_pbo\obj\Debug\net6.0\ref\project_pbo.dll
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.csproj.AssemblyReference.cache
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.AssemblyInfoInputs.cache
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.AssemblyInfo.cs
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.csproj.CoreCompileInputs.cache
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.MvcApplicationPartsAssemblyInfo.cache
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.RazorAssemblyInfo.cache
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.RazorAssemblyInfo.cs
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.dll
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\refint\project_pbo.dll
+D:\Kuliah\Semester 4\PBO\Tugas Akhir\Coding2\project_pbo\obj\Debug\net6.0\project_pbo.pdb
