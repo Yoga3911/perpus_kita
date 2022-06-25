@@ -9,6 +9,7 @@
         public string? Isbn { get; set; }
         public string? Description { get; set; }
         public Int16 PublisherId { get; set; }
+        public string? Category { get; set; }
         public DateTime PublishedDate { get; set; }
     }
 }
