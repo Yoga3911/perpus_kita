@@ -1,0 +1,174 @@
+﻿@{
+    ViewData["Title"] = "Loan List";
+}
+
+<header class="header body-pd" id="header">
+    <div class="header_toggle">
+        <i class='' id="header-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">
+                <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z" />
+                <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            </svg>
+        </i>
+    </div>
+    <div class="header_toggle appName">
+        <i class='' id="header-toggle">
+            PerpusKita
+        </i>
+    </div>
+
+</header>
+<div class="l-navbar show" id="nav-bar">
+    <nav class="nav">
+        <div>
+            <a class="nav_logo" asp-area="" asp-controller="Profile" asp-action="Index">
+                <i class='nav_logo-icon header_img'>
+                    <img src="https://i.pinimg.com/736x/80/63/35/8063359effd01b990e653bb32a83485d--no-face-black-hoodie.jpg" alt="">
+                </i> <span class="nav_logo-name" id="username"></span>
+            </a>
+            <div class="nav_list">
+                <a class="nav_link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class='nav_icon'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                            <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z" />
+                        </svg>
+                    </i> <span class="nav_name">Dashboard</span>
+                </a> <a class="nav_link" asp-area="" asp-controller="Book" asp-action="Index">
+                    <i class='nav_icon'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                            <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                        </svg>
+                    </i> <span class="nav_name">Book List</span>
+                </a> @{
+                    if (ViewData["status"]!.ToString() == "user")
+                    {
+                        <a class="nav_link active" asp-area="" asp-controller="Book" asp-action="BookOwned">
+                            <i class='nav_icon'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
+                                    <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6l.5.667Z" />
+                                </svg>
+                            </i> <span class="nav_name">Books Owned</span>
+                        </a>
+                    } else
+                    {
+                        <a class="nav_link active" asp-area="" asp-controller="Book" asp-action="LoanList">
+                            <i class='nav_icon'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2-fill" viewBox="0 0 16 16">
+                                    <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4h-8.5ZM15 4.667V5H1v-.333L1.5 4h6V1h1v3h6l.5.667Z" />
+                                </svg>
+                            </i> <span class="nav_name">Loan List</span>
+                        </a>
+                    }
+                } @{
+                    if (ViewData["status"]!.ToString() == "admin")
+                    {
+                        <a class="nav_link" asp-area="" asp-controller="Book" asp-action="ManageBook" id="manageBook">
+                            <i class='nav_icon'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench-adjustable-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M6.705 8.139a.25.25 0 0 0-.288-.376l-1.5.5.159.474.808-.27-.595.894a.25.25 0 0 0 .287.376l.808-.27-.595.894a.25.25 0 0 0 .287.376l1.5-.5-.159-.474-.808.27.596-.894a.25.25 0 0 0-.288-.376l-.808.27.596-.894Z" />
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16Zm-6.202-4.751 1.988-1.657a4.5 4.5 0 0 1 7.537-4.623L7.497 6.5l1 2.5 1.333 3.11c-.56.251-1.18.39-1.833.39a4.49 4.49 0 0 1-1.592-.29L4.747 14.2a7.031 7.031 0 0 1-2.949-2.951ZM12.496 8a4.491 4.491 0 0 1-1.703 3.526L9.497 8.5l2.959-1.11c.027.2.04.403.04.61Z" />
+                                </svg>
+                            </i> <span class="nav_name">Manage Books</span>
+                        </a>
+                    }
+                } <a class="nav_link" asp-area="" asp-controller="Book" asp-action="Favorite">
+                    <i class='nav_icon'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM8.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z" />
+                        </svg>
+                    </i> <span class="nav_name">Favorite</span>
+                </a>
+            </div>
+
+        </div>
+        <a class="nav_link logoutUser" style="cursor: pointer">
+            <i class='nav_icon'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                    <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                </svg>
+            </i> <span class="nav_name">SignOut</span>
+        </a>
+    </nav>
+</div>
+
+<div class="">
+    <h4>Daftar Buku yang dimiliki</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Tanggal Peminjaman</th>
+                <th scope="col">Tanggal Pengembalian</th>
+                <th scope="col">Status</th>
+                <th scope="col">Persetujuan</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int count = 1;
+                var data = (List<LoanModel>)ViewData["data"]!;
+                foreach (var item in data)
+                {
+                    var dateLoa = item.LoanDate.ToString("dd MMMM yyyy");
+                    var dateRet = item.ReturnDate.ToString("dd MMMM yyyy");
+                    var status = "";
+                    if (item.StatusId == 1)
+                    {
+                        status = "Menunggu";
+                    } else if (item.StatusId == 2)
+                    {
+                        status = "Dipinjam";
+                    } else if (item.StatusId == 3)
+                    {
+                        status = "Dikembalikan";
+                    }
+                    <tr>
+                        <th scope="row">@count</th>
+                        <th>@item.Isbn</th>
+                        <td>@item.Title</td>
+                        <td>@dateLoa</td>
+                        <td>@dateRet</td>
+                        <td>@status</td>
+                        @{
+                            if (item.StatusId == 1) {
+                                @model project_pbo.Models.LoanModel
+                                <form asp-controller="Book" asp-action="ApplyLoanChanges">
+                                <input asp-for="LoanId" value="@item.LoanId" type="text" class="form-control" id="title" hidden>
+                                    <td><button type="submit" class="btn btn-success">Setuju</button></td>
+                                </form>
+                            } else
+                            {
+                                <td><p>-</p></td>
+                            }
+                        }
+                        
+                    </tr>
+                count = count + 1;
+                    
+                }
+            }
+            
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    if (sessionStorage.getItem("isAdmin") == "false") {
+        console.log(sessionStorage.getItem("isAdmin"));     
+        $("#manageBook").hide();
+    }
+    $("#username").html(sessionStorage.getItem("name"));
+    $('.logoutUser').click(function () {
+    var conf = confirm('Apakah anda yakin ingin logout dari akun ini?');
+    if (conf) {
+            console.log("Logout");
+            sessionStorage.clear();
+            window.location.href = "/Auth"
+        } else {
+            console.log("Gajadi logout");
+        }
+    });
+</script>
