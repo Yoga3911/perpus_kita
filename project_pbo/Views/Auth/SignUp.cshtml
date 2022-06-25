@@ -1,43 +1,50 @@
 ﻿@{
     ViewData["Title"] = "Sign Up";
 }
+<div class="" style="overflow-x: clip">
+    <img src="~/assets/regis2.svg" style="width: 100%; position: absolute; left: 0 ;top:-65px; z-index: 0">
+    <div style="position: relative; top: 110px; z-index: 10">
+        @model project_pbo.Models.UserModel
+        <form asp-controller="Auth" asp-action="Register">
+            <div class="row" style="color: white;">
+                <div class="mb-3 col-5">
+                    <label asp-for="FirstName" class="form-label">First Name</label>
+                    <input asp-for="FirstName" type="text" class="form-control" id="firstName">
+                </div>
+                <div class="mb-3 col-5">
+                    <label asp-for="LastName" class="form-label">Last Name</label>
+                    <input asp-for="LastName" type="text" class="form-control" id="lastName">
+                </div>
+                <div class="mb-3 col-5">
+                    <label asp-for="Email" class="form-label">Email address</label>
+                    <input asp-for="Email" type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3 col-5">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" id="password1">
+                </div>
+                <div class="mb-3 col-5">
+                    <label for="passowrd2" class="form-label">Retype Password</label>
+                    <input type="password" class="form-control" id="password2">
+                </div>
+                <div class="mb-3 col-5">
+                    <label asp-for="Address" class="form-label">Address</label>
+                    <input asp-for="Address" type="text" class="form-control" id="address">
+                </div>
+                <div class="mb-3 col-5">
+                    <label asp-for="Phone" class="form-label">Phone Number</label>
+                    <input asp-for="Phone" type="text" class="form-control" id="phone">
+                </div>
+            </div>
 
-<div class="container body-pd-r">
-    @model project_pbo.Models.UserModel
-    <form asp-controller="Auth" asp-action="Register">
-        <div class="mb-3">
-            <label asp-for="FirstName" class="form-label">First Name</label>
-            <input asp-for="FirstName" type="text" class="form-control" id="firstName">
-        </div>
-        <div class="mb-3">
-            <label asp-for="LastName" class="form-label">Last Name</label>
-            <input asp-for="LastName" type="text" class="form-control" id="lastName">
-        </div>
-        <div class="mb-3">
-            <label asp-for="Email" class="form-label">Email address</label>
-            <input asp-for="Email" type="email" class="form-control" id="email">
-        </div>
-        <div class="mb-3">
-            <label asp-for="Password" class="form-label">Password</label>
-            <input asp-for="Password" type="password" class="form-control" id="password1">
-        </div>
-        <div class="mb-3">
-            <label for="passowrd2" class="form-label">Retype Password</label>
-            <input type="password" class="form-control" id="password2">
-        </div>
-        <div class="mb-3">
-            <label asp-for="Address" class="form-label">Address</label>
-            <input asp-for="Address" type="text" class="form-control" id="address">
-        </div>
-        <div class="mb-3">
-            <label asp-for="Phone" class="form-label">Phone Number</label>
-            <input asp-for="Phone" type="text" class="form-control" id="phone">
-        </div>
-        <button type="button" class="btn btn-success" id="register">Register</button>
-    </form>
-    <center><img src="~/assets/loading2.gif" width=350 id="loading"></center>
-    <br>
+            <div class="col-4" style="position: relative; left: 360px">
+                <button type="button" class="btn btn-success" id="register">Register</button>
+                <img style="position: absolute; z-index: 12; top:-50px; left: -125px" src="~/assets/loading2.gif" height=250 width=350 id="loading">
+            </div>
+        </form>
+    </div>
 </div>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
     $("#loading").hide();
@@ -46,6 +53,7 @@
     })
 
     $("#register").click(function() {
+        $("#register").hide();
         $("#loading").show();
         const firstName = $("#firstName").val();
         const lastName = $("#lastName").val();
@@ -56,10 +64,14 @@
         const phone = $("#phone").val();
         if (firstName == "" || lastName == "" || email == "" || password1 == "" || password2 == "" || address == "" || phone == "") {
             alert("Tidak boleh ada field yang kosong");
+            $("#register").show();
+            $("#loading").hide();
             return;
         }
         if (password1 != password2) {
             alert("Password dan Retype Password tidak sama!");
+            $("#register").show();
+            $("#loading").hide();
             return;
         }
 
@@ -74,9 +86,13 @@
                     window.location.href = "/Auth";
                 } else {
                     alert("Register gagal, periksa kembali data diri anda");
+                    $("#register").show();
+                    $("#loading").hide();
                 }
             },
             error: function (result, status, err) {
+                alert("Register gagal, periksa kembali data diri anda");
+                $("#register").show();
                 $("#loading").hide();
                 console.log("error", result.responseText);
                 console.log("error", status.responseText);

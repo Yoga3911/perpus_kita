@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Book List";
+    ViewData["Title"] = "Book Detail";
 }
 
 <header class="header body-pd" id="header">
@@ -49,8 +49,7 @@
                                 </svg>
                             </i> <span class="nav_name">Books Owned</span>
                         </a>
-                    }
-                    else
+                    } else
                     {
                         <a class="nav_link" asp-area="" asp-controller="Book" asp-action="LoanList">
                             <i class='nav_icon'>
@@ -60,7 +59,7 @@
                             </i> <span class="nav_name">Loan List</span>
                         </a>
                     }
-                }@{
+                } @{
                     if (ViewData["status"]!.ToString() == "admin")
                     {
                         <a class="nav_link" asp-area="" asp-controller="Book" asp-action="ManageBook" id="manageBook">
@@ -93,15 +92,30 @@
 </div>
 
 <div class="">
-    <h4>Daftar Buku</h4>
-    <input class="form-control me-2 my-3" type="search" placeholder="Search" aria-label="Search" id="search">
-    <div class="row flex-row-reverse mx-1 me-2 my-2">
-        <button type="button" class="btn btn-primary col-3" style="width: fit-content" id="nonFiksi">Non Fiksi</button>
-        <button type="button" class="btn btn-primary col-3 mx-3" style="width: fit-content" id="fiksi">Fiksi</button>
-        <p class="col-3" style="width: fit-content; font-weight: 800;">Filter By: </p>
-    </div>
-    <div class="row" id="dataBuku">
-        
+    <h4>Daftar Buku > Rincian Buku</h4>
+    <div class="row">
+        @{
+            var data = (BookModel)ViewData["data"]!;
+            var date = data.PublishedDate.ToString("dddd, dd MMMM yyyy");
+            Console.WriteLine(date);
+        }
+        @{
+            <input id="bookId" value="@data.BookId" name="bookId" hidden>
+            <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap" height="500">
+            <div class="my-2">
+                <h4 style="font-weight:800">@data.Title</h4>
+                    <p style="font-weight:800">Kategory: <span style="font-weight:200">@data.Category</span></p>
+                    <p style="font-weight:800">Rating: <span style="font-weight:200">@data.Rating</span></p>
+                    <p style="font-weight:800">ISBN: <span style="font-weight:200">@data.Isbn</span></p>
+                    <p style="font-weight:800">Tanggal Publikasi: <span style="font-weight:200">@date</span></p>
+            </div>
+            <div class="my-2">
+                <h5 style="font-weight:800">Deskripsi</h5>
+                <h6>@data.Description</h6>
+            </div>
+        }
+        <button type="button" id="loan" class="btn btn-primary my-3" style="width: fit-content;">Pinjam Buku</button>
+        <button type="button" id="fav" class="btn btn-danger my-3 mx-2" style="width: fit-content;">Tambah Favorite</button>
     </div>
 
 </div>
@@ -109,7 +123,7 @@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript">
     if (sessionStorage.getItem("isAdmin") == "false") {
-        console.log(sessionStorage.getItem("isAdmin"));
+        console.log(sessionStorage.getItem("isAdmin"));     
         $("#manageBook").hide();
     }
     $("#username").html(sessionStorage.getItem("name"));
@@ -123,123 +137,27 @@
             console.log("Gajadi logout");
         }
     });
-    let dataProduct2 = [];
-    function getData() {
-        $.ajax({
-            type: "post",
-            url: "/Book/GetAllBook",
-            success: function(val) {
-                console.log(val);
-                dataProductSearch = [];
-                for (var i = 0; i < val.length; i++) {
-                     dataProduct2.push(`<div class="col-4">
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                        <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${val[i].title}</h5>
-                            <p class="card-text">${val[i].description}</p>
-                            @Html.ActionLink("Detail", "DetailBook", new { bookId = 1 },
-                    new {@class = "btn btn-primary" })
-                        </div>
-                    </div>
-                </div>`)
-                    dataProductSearch.push(`<div class="col-4">
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                        <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${val[i].title}</h5>
-                            <p class="card-text">${val[i].description}</p>
-                            @Html.ActionLink("Detail", "DetailBook", new { bookId = 1 },
-                    new {@class = "btn btn-primary" })
-                        </div>
-                    </div>
-                </div>`)
-
+    $("#loan").click(function() {
+        if (confirm("Apakah anda yakin ingin meminjam buku ini?")) {
+            $.ajax({
+                type: "post",
+                url: "/Book/insertData",
+                data: {userId: sessionStorage.getItem("id"), bookId: $("#bookId").val()},
+                success: function(val) {
+                    window.location.href = "/Book/index";
                 }
-                $("#dataBuku").html(dataProductSearch);
-            }
-        })
-    }
-
-    getData();
-
-    $("#search").keyup(function() {
-        $.ajax({
-            type: "post",
-            url: "/Book/Filter",
-            data: {query: $("#search").val()},
-            success: function(val) {
-                console.log(val);
-                dataProductSearch = [];
-                for (var i = 0; i < val.length; i++) {
-                    dataProductSearch.push(`<div class="col-4">
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                        <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${val[i].title}</h5>
-                            <p class="card-text">${val[i].description}</p>
-                            @Html.ActionLink("Detail", "DetailBook", new { bookId = 1 },
-                    new {@class = "btn btn-primary" })
-                        </div>
-                    </div>
-                </div>`)
-
-                }
-                $("#dataBuku").html(dataProductSearch);
-            }
-        })
+            })
+        }
     })
-
-    $("#fiksi").click(function() {
-        $.ajax({
-            type: "post",
-            url: "/Book/FilterFik",
-            success: function(val) {
-                console.log(val);
-                dataProductSearch = [];
-                for (var i = 0; i < val.length; i++) {
-                    dataProductSearch.push(`<div class="col-4">
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                        <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${val[i].title}</h5>
-                            <p class="card-text">${val[i].description}</p>
-                            @Html.ActionLink("Detail", "DetailBook", new { bookId = 1 },
-                    new {@class = "btn btn-primary" })
-                        </div>
-                    </div>
-                </div>`)
-
+    $("#fav").click(function() {
+            $.ajax({
+                type: "post",
+                url: "/Book/SaveFavorite",
+                data: {userId: sessionStorage.getItem("id"), bookId: $("#bookId").val()},
+                success: function(val) {
+                    window.location.href = "/Book/BookOwned";
                 }
-                $("#dataBuku").html(dataProductSearch);
-            }
-        })
+            })
+        
     })
-
-    $("#nonFiksi").click(function() {
-        $.ajax({
-            type: "post",
-            url: "/Book/FilterNonFik",
-            success: function(val) {
-                console.log(val);
-                dataProductSearch = [];
-                for (var i = 0; i < val.length; i++) {
-                    dataProductSearch.push(`<div class="col-4">
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                        <img class="card-img-top" src="https://picsum.photos/536/354" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">${val[i].title}</h5>
-                            <p class="card-text">${val[i].description}</p>
-                            @Html.ActionLink("Detail", "DetailBook", new { bookId = 1 },
-                    new {@class = "btn btn-primary" })
-                        </div>
-                    </div>
-                </div>`)
-
-                }
-                $("#dataBuku").html(dataProductSearch);
-            }
-        })
-    })
-
 </script>

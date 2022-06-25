@@ -4876,19 +4876,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS TUF\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PERKULIAHAN\\Semester 4\\perpus_kita\\project_pbo\\project_pbo.csproj",
+      "projectUniqueName": "D:\\Kuliah\\Semester 4\\PBO\\Tugas Akhir\\Coding2\\project_pbo\\project_pbo.csproj",
       "projectName": "project_pbo",
-      "projectPath": "D:\\PERKULIAHAN\\Semester 4\\perpus_kita\\project_pbo\\project_pbo.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\PERKULIAHAN\\Semester 4\\perpus_kita\\project_pbo\\obj\\",
+      "projectPath": "D:\\Kuliah\\Semester 4\\PBO\\Tugas Akhir\\Coding2\\project_pbo\\project_pbo.csproj",
+      "packagesPath": "C:\\Users\\ASUS TUF\\.nuget\\packages\\",
+      "outputPath": "D:\\Kuliah\\Semester 4\\PBO\\Tugas Akhir\\Coding2\\project_pbo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS TUF\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4949,7 +4949,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

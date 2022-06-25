@@ -4,8 +4,8 @@
 
 
 <div class="" style="overflow-x: clip">
-    <img src="~/assets/login2.svg" width="100%" style="position: absolute; left: 0 ;top:-65px; z-index: 0">
-    <div style="position: relative; top: 150px; left: 600px; z-index: 10">
+    <img src="~/assets/login2.svg" style="width: 100%; position: absolute; left: 0 ;top:-65px; z-index: 0">
+    <div style="position: relative; top: 150px; left: 400px; z-index: 10">
         @model project_pbo.Models.UserModel
         <form asp-controller="Auth" asp-action="Login">
             <div class="col-4 mb-3">
@@ -22,13 +22,13 @@
             </div>
 
         </form>
-        <center><img src="~/assets/loading2.gif" width=350 id="loading"></center>
+        <img style="position: relative; z-index: 12" src="~/assets/loading2.gif" width=350 id="loading">
         <br>
-        <center>
-            <div class="alert alert-danger" role="alert" id="errorAlert">
-                Email atau Password salah!
-            </div>
-        </center>
+
+        <div style="position: relative; z-index: 10" class="alert alert-danger col-4" role="alert" id="errorAlert">
+            Email atau Password salah!
+        </div>
+
     </div>
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -55,10 +55,20 @@
         success: function (resdata) {
           console.log("Login Success");
           $("#loading").hide();
-          if (resdata) {
-              window.location.href = "/Home";
-          } else {
+          if (!resdata) {
               $("#errorAlert").show();
+              
+          } else {
+              console.log(resdata);
+              sessionStorage.setItem("name", resdata.firstName + " " + resdata.lastName);
+              sessionStorage.setItem("id", resdata.userId);
+              sessionStorage.setItem("firstName", resdata.firstName);
+              sessionStorage.setItem("lastName", resdata.lastName);
+              sessionStorage.setItem("email", resdata.email);
+              sessionStorage.setItem("address", resdata.address);
+              sessionStorage.setItem("phone", resdata.phone);
+              sessionStorage.setItem("isAdmin", resdata.isAdmin);
+              window.location.href = "/Home";
           }
         },
         error: function (result, status, err) {

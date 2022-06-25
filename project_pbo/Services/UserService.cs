@@ -54,5 +54,44 @@ namespace project_pbo.Services
 
             return true;
         }
+
+        public UserModel GetById(int userId)
+        {
+            DataSet ds = new DataSet();
+            NpgsqlParameter[] param = new NpgsqlParameter[0];
+
+            userRepository.GetById(ds, userId, param);
+
+            var data = ds.Tables[0];
+
+            UserModel user = new UserModel();
+            foreach (DataRow dr in data.Rows)
+            {
+                user.UserId = dr.Field<Int32>(data.Columns[0]);
+                user.FirstName = dr.Field<string>(data.Columns[1]);
+                user.LastName = dr.Field<string>(data.Columns[2]);
+                user.Address = dr.Field<string>(data.Columns[3]);
+                user.Email = dr.Field<string>(data.Columns[4]);
+                user.Password = dr.Field<string>(data.Columns[5]);
+                user.IsAdmin = dr.Field<bool>(data.Columns[6]);
+                user.Phone = dr.Field<string>(data.Columns[7]);
+            }
+
+            return user;
+        }
+
+        public void UpdateUser(string firstName, string lastName, string address, string phone, int userId)
+        {
+            string query = "UPDATE users SET first_name = @first_name, last_name = @last_name, address = @address, phone = @phone WHERE user_id = @user_id";
+            NpgsqlParameter[] param = new NpgsqlParameter[5];
+            param[0] = new NpgsqlParameter("@first_name", firstName);
+            param[1] = new NpgsqlParameter("@last_name", lastName);
+            param[2] = new NpgsqlParameter("@address", address);
+            param[3] = new NpgsqlParameter("@phone", phone);
+            param[4] = new NpgsqlParameter("@user_id", userId);
+
+
+            userRepository.UpdateData(query, param);
+        }
     }
 }

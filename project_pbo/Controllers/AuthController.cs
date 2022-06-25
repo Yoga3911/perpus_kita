@@ -27,13 +27,24 @@ namespace project_pbo.Controllers
         }
 
         [HttpPost]
-        public bool Login(string email, string password)
+        public dynamic Login(string email, string password)
         {
             UserModel user = userService.LoginEmailPassword(email, password);
 
             if (user.Email == email && email != null)
             {
-                return true;
+                HttpContext.Session.SetInt32("id", user.UserId);
+                if (user.IsAdmin! == true)
+                {
+                    HttpContext.Session.SetString("statusUser", "admin");
+
+                }
+                else
+                {
+                    HttpContext.Session.SetString("statusUser", "user");
+
+                }
+                return user;
             }
             return false;
         }
@@ -45,6 +56,7 @@ namespace project_pbo.Controllers
             Console.WriteLine(success);
             if (success)
             {
+
                 return true;
             }
 
