@@ -15,6 +15,7 @@ namespace project_pbo.Controllers
 
         public IActionResult Index()
         {
+            ViewData["status"] = HttpContext.Session.GetString("statusUser");
             return View();
         }
 
