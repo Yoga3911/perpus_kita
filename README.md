@@ -1,4 +1,7 @@
-#Fitur 
+# Perpus Kita
+Perpus Kita adalah aplikasi website yang digunakan untuk mempermudah masyarakat dalam peminjaman buku secara online.
+
+# Fitur 
 - Login & Register
 - CRUD Book
 - CRUD Favorite
